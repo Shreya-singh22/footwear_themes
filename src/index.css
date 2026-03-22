@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 160 25% 5%;
+    --foreground: 150 15% 88%;
+
+    --card: 160 20% 8%;
+    --card-foreground: 150 15% 88%;
+
+    --popover: 160 20% 8%;
+    --popover-foreground: 150 15% 88%;
+
+    --primary: 82 75% 52%;
+    --primary-foreground: 160 25% 5%;
+
+    --secondary: 165 25% 12%;
+    --secondary-foreground: 150 15% 80%;
+
+    --muted: 160 15% 14%;
+    --muted-foreground: 155 10% 50%;
+
+    --accent: 45 85% 58%;
+    --accent-foreground: 160 25% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 160 15% 16%;
+    --input: 160 15% 16%;
+    --ring: 82 75% 52%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 160 20% 8%;
+    --sidebar-foreground: 150 15% 88%;
+    --sidebar-primary: 82 75% 52%;
+    --sidebar-primary-foreground: 160 25% 5%;
+    --sidebar-accent: 165 25% 12%;
+    --sidebar-accent-foreground: 150 15% 80%;
+    --sidebar-border: 160 15% 16%;
+    --sidebar-ring: 82 75% 52%;
+
+    /* Custom tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(160, 25%, 5%) 0%, hsl(165, 30%, 10%) 50%, hsl(160, 20%, 7%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(160, 20%, 10%) 0%, hsl(160, 20%, 7%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(82, 75%, 52%) 0%, hsl(95, 70%, 45%) 100%);
+    --shadow-glow: 0 0 40px hsl(82, 75%, 52%, 0.15);
+    --shadow-card: 0 8px 32px hsl(0, 0%, 0%, 0.3);
+
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
