@@ -1,0 +1,228 @@
+export const PRODUCTS = [
+  {
+    id: 'sa-onyx',
+    name: 'Phantom Onyx Premium',
+    description: 'The pinnacle of footwear engineering. Crafted from matte obsidian leather with polished accents for a sleek, monochromatic look.',
+    priceInr: 27999,
+    category: 'Sneakers',
+    images: ['/images/hero-shoe.png', '/images/shoe-1.png'],
+    sizes: ['7', '8', '9', '10', '11', '12'],
+    colors: ['Obsidian Black'],
+    stock: 4,
+    rating: 4.8,
+    numReviews: 24,
+    isLimited: true,
+    brand: { name: 'SneakArts Original' }
+  },
+  {
+    id: 'jordan-1',
+    name: 'Air Jordan 1 Retro High',
+    description: 'The icon that started it all. Featuring a classic high-top silhouette in the coveted "Stealth Black" colorway with premium leather finishes.',
+    priceInr: 14999,
+    category: 'Sneakers',
+    images: ['/images/shoe-1.png'],
+    sizes: ['8', '9', '10', '11'],
+    colors: ['Black/White'],
+    stock: 12,
+    rating: 4.9,
+    numReviews: 154,
+    brand: { name: 'Jordan' }
+  },
+  {
+    id: 'yeezy-350',
+    name: 'Yeezy Boost 350 V2',
+    description: 'Redefining comfort with a revolutionary Primeknit upper and responsive Boost cushioning for an unparalleled urban exploration experience.',
+    priceInr: 19999,
+    category: 'Casual',
+    images: ['/images/shoe-2.png'],
+    sizes: ['9', '10', '11'],
+    colors: ['Onyx'],
+    stock: 5,
+    rating: 4.7,
+    numReviews: 89,
+    isLimited: true,
+    brand: { name: 'Yeezy' }
+  },
+  {
+    id: 'nike-dunk',
+    name: 'Nike Dunk Low "Panda"',
+    description: 'The streets most coveted silhouette. A clean, classic black and white leather construction that pairs with any aesthetic.',
+    priceInr: 9999,
+    category: 'Sneakers',
+    images: ['/images/shoe-3.png'],
+    sizes: ['7', '8', '9', '10', '11', '12'],
+    colors: ['Black/White'],
+    stock: 25,
+    rating: 4.5,
+    numReviews: 340,
+    brand: { name: 'Nike' }
+  },
+  {
+    id: 'sa-zenith',
+    name: 'Carbon Zenith',
+    description: 'Ultra-lightweight performance runner featuring integrated carbon fiber plate technology for maximum energy return and speed.',
+    priceInr: 39999,
+    category: 'Running',
+    images: ['/images/shoe-2.png'],
+    sizes: ['8', '9', '10', '11'],
+    colors: ['Carbon Grey'],
+    stock: 2,
+    rating: 5.0,
+    numReviews: 12,
+    isLimited: true,
+    brand: { name: 'SneakArts Original' }
+  },
+  {
+    id: 'sa-pulse',
+    name: 'Midnight Pulse',
+    description: 'Cyberpunk inspired runner with smart integrated lighting and reactive sole technology for the modern urban athlete.',
+    priceInr: 34999,
+    category: 'Running',
+    images: ['/images/shoe-1.png'],
+    sizes: ['9', '10', '11'],
+    colors: ['Neon Blue'],
+    stock: 15,
+    rating: 4.9,
+    brand: { name: 'SneakArts Original' }
+  },
+  {
+    id: 'adidas-ub',
+    name: 'Adidas UltraBoost 22',
+    description: 'Engineered for endless energy. Featuring signature Boost foam for the ultimate performance running experience.',
+    priceInr: 16999,
+    category: 'Running',
+    images: ['/images/shoe-3.png'],
+    sizes: ['7', '8', '9', '10', '11'],
+    colors: ['Core Black'],
+    stock: 20,
+    rating: 4.6,
+    brand: { name: 'Adidas' }
+  },
+  {
+    id: 'sa-flare',
+    name: 'Solar Flare Limited',
+    description: 'A revolutionary material that shifts color with temperature. Every step reveals a unique iridescent secondary glow.',
+    priceInr: 64999,
+    category: 'Limited',
+    images: ['/images/shoe-1.png'],
+    sizes: ['10', '11'],
+    colors: ['Iridescent'],
+    stock: 3,
+    rating: 4.9,
+    isLimited: true,
+    brand: { name: 'SneakArts Original' }
+  },
+  {
+    id: 'sa-voyager',
+    name: 'Obsidian Voyager',
+    description: 'Designed for the modern nomad. Waterproof, indestructible, and crafted for maximum versatility in any environment.',
+    priceInr: 44999,
+    category: 'Casual',
+    images: ['/images/shoe-2.png'],
+    sizes: ['8', '9', '10', '11', '12'],
+    colors: ['Matte Black'],
+    stock: 7,
+    rating: 4.7,
+    brand: { name: 'SneakArts Original' }
+  },
+  {
+    id: 'nike-am95',
+    name: 'Nike Air Max 95',
+    description: 'Anatomically inspired design with iconic Max Air cushioning. A heritage runner that continues to define the category.',
+    priceInr: 13999,
+    category: 'Sneakers',
+    images: ['/images/shoe-3.png'],
+    sizes: ['8', '9', '10'],
+    colors: ['Shadow'],
+    stock: 14,
+    rating: 4.4,
+    brand: { name: 'Nike' }
+  },
+  {
+    id: 'jordan-4',
+    name: 'Jordan 4 "Black Cat"',
+    description: 'A triple black suede masterpiece. The ultimate luxury interpretation of the classic basketball silhouette.',
+    priceInr: 22999,
+    category: 'Sneakers',
+    images: ['/images/shoe-1.png'],
+    sizes: ['9', '10', '11'],
+    colors: ['Triple Black'],
+    stock: 5,
+    rating: 5.0,
+    isLimited: true,
+    brand: { name: 'Jordan' }
+  },
+  {
+    id: 'adidas-forum',
+    name: 'Adidas Forum Low',
+    description: 'Retro basketball silhouette reimagined with modern luxury materials and a clean, minimalist white-leather finish.',
+    priceInr: 10999,
+    category: 'Casual',
+    images: ['/images/shoe-3.png'],
+    sizes: ['7', '8', '9', '10'],
+    colors: ['Vintage White'],
+    stock: 18,
+    rating: 4.5,
+    brand: { name: 'Adidas' }
+  },
+  {
+    id: 'sa-spectre',
+    name: 'Wraith Spectre',
+    description: 'The ghost of the track. Featuring ghost-white translucent materials that reveal the internal architecture of the shoe.',
+    priceInr: 71999,
+    category: 'Limited',
+    images: ['/images/hero-shoe.png'],
+    sizes: ['10'],
+    colors: ['Spectral White'],
+    stock: 1,
+    rating: 5.0,
+    isLimited: true,
+    brand: { name: 'SneakArts Original' }
+  },
+  {
+    id: 'nike-vapor',
+    name: 'Nike Vaporfly Next% 2',
+    description: 'The fastest shoe in history. Engineered to break records and redefine what is possible in elite marathoning.',
+    priceInr: 21999,
+    category: 'Running',
+    images: ['/images/shoe-2.png'],
+    sizes: ['8', '9', '10', '11'],
+    colors: ['Volt'],
+    stock: 8,
+    rating: 4.9,
+    brand: { name: 'Nike' }
+  },
+  {
+    id: 'yeezy-slide',
+    name: 'Yeezy Slide',
+    description: 'Minimalist luxury comfort. Crafted from a single piece of injected EVA foam for a lightweight and durable design.',
+    priceInr: 5999,
+    category: 'Casual',
+    images: ['/images/shoe-3.png'],
+    sizes: ['7', '8', '9', '10', '11', '12'],
+    colors: ['Bone'],
+    stock: 50,
+    rating: 4.3,
+    brand: { name: 'Yeezy' }
+  }
+];
+
+export const CUSTOMIZATION = {
+  config: {
+    brandColors: { primary: '#000000', secondary: '#ffffff', accent: '#1a1a1a' },
+    heroSection: {
+      title: 'ELEGANT',
+      subtitle: 'BLACK ○',
+      verticalText: 'SIMPLE',
+      ctaText: 'BUY NOW',
+      image: '/images/hero-shoe.png',
+    },
+    navbar: {
+      links: [
+        { name: 'Home', path: '/' },
+        { name: 'New Arrivals', path: '/shop' },
+        { name: 'Trending', path: '#trending' }
+      ]
+    }
+  }
+};
