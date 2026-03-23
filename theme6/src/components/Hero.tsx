@@ -33,32 +33,31 @@ const Hero: React.FC<HeroProps> = ({ customization }) => {
 
   return (
     <section ref={containerRef} className="relative h-screen w-full bg-[#000000] overflow-hidden flex items-center justify-center">
-      {/* 🌌 Background "ELEGANT" Text */}
-      <div className="absolute top-[10%] left-0 w-full flex justify-center pointer-events-none z-0">
+      {/* 🌌 High-Contrast "ELEGANT" Text */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
         <motion.h1 
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 0.2, y: 0 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="text-[18vw] font-display font-medium tracking-[0.2em] text-white select-none whitespace-nowrap"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 0.4, scale: 1 }}
+          transition={{ duration: 2.5, ease: "easeOut" }}
+          className="text-[25vw] font-display font-medium tracking-[-0.05em] text-white select-none whitespace-nowrap"
           style={{ 
-            WebkitTextStroke: '1px rgba(255,255,255,0.4)',
+            WebkitTextStroke: '2px rgba(255,255,255,0.8)',
             color: 'transparent',
-            lineHeight: '0.8'
           }}
         >
           {config.title}
         </motion.h1>
       </div>
 
-      {/* 📐 Vertical "SIMPLE" Text */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 h-full flex flex-col justify-center pointer-events-none z-0">
+      {/* 📐 Vertical "SIMPLE" Text - Right Side */}
+      <div className="absolute right-12 top-0 h-full flex items-center pointer-events-none z-10">
         <motion.span 
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 0.15, x: 0 }}
-          transition={{ delay: 0.5, duration: 1.5 }}
-          className="text-[12vw] font-display font-light uppercase tracking-[0.4em] transform rotate-90 origin-center text-white select-none whitespace-nowrap"
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 0.3, y: 0 }}
+          transition={{ delay: 0.8, duration: 2 }}
+          className="text-[8vw] font-display font-light uppercase tracking-[0.6em] transform rotate-90 origin-center text-white select-none whitespace-nowrap"
           style={{ 
-            WebkitTextStroke: '1px rgba(255,255,255,0.3)',
+            WebkitTextStroke: '1px rgba(255,255,255,0.5)',
             color: 'transparent'
           }}
         >
@@ -66,66 +65,57 @@ const Hero: React.FC<HeroProps> = ({ customization }) => {
         </motion.span>
       </div>
 
-      {/* 🏺 The Pedestal Area */}
-      <div className="relative z-10 w-full max-w-5xl flex flex-col items-center justify-center">
-        {/* Spotlight Glow */}
-        <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-[120px] opacity-40" />
+      {/* 🏺 The Hero Product Area */}
+      <div className="relative z-20 w-full h-full flex flex-col items-center justify-center">
+        {/* Cinematic Spotlight */}
+        <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[100vw] h-[60vh] bg-white/[0.03] rounded-full blur-[150px] pointer-events-none" />
         
         <motion.div 
           style={{ y, rotate }}
-          className="relative flex flex-col items-center"
+          className="relative flex flex-col items-center justify-center"
         >
-          {/* Main Shoe Image */}
-          <img 
+          {/* Main Shoe Image (Centric) */}
+          <motion.img 
+            initial={{ opacity: 0, scale: 0.8, filter: 'brightness(0)' }}
+            animate={{ opacity: 1, scale: 1, filter: 'brightness(1.1)' }}
+            transition={{ duration: 2.5, ease: "circOut" }}
             src={config.image} 
             alt="Luxury Sneaker"
-            className="w-[70vw] md:w-[650px] object-contain drop-shadow-[0_50px_50px_rgba(0,0,0,1)] relative z-20 pointer-events-none select-none"
+            className="w-[85vw] md:w-[800px] object-contain relative z-30 pointer-events-none select-none drop-shadow-[0_60px_60px_rgba(0,0,0,1)]"
           />
 
-          {/* 🌑 3D Cylinder Pedestal */}
-          <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-[300px] md:w-[500px] h-[100px] md:h-[180px] z-10">
-            {/* Pedestal Top Surface */}
-            <div className="absolute top-0 left-0 w-full h-[60px] bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] rounded-[100%] border-t border-white/10 shadow-[inner_0_4px_10px_rgba(255,255,255,0.1)]" />
-            
-            {/* Pedestal Body Side */}
-            <div className="absolute top-[30px] left-0 w-full h-full bg-gradient-to-r from-[#050505] via-[#111] to-[#050505] border-x border-white/5" />
-            
-            {/* Pedestal Base Shadow */}
-            <div className="absolute -bottom-10 left-[-10%] w-[120%] h-20 bg-black/90 blur-3xl opacity-80" />
-          </div>
-
-          {/* Shoe Shadow on Pedestal */}
-          <div className="absolute bottom-[40px] left-1/2 -translate-x-1/2 w-[60%] h-12 bg-black/95 blur-2xl rounded-[100%] z-10" />
+          {/* Deep Ambient Floor Shadow */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-[80%] h-32 bg-black blur-3xl rounded-[100%] z-10 opacity-90" />
         </motion.div>
 
-        {/* CTA Area */}
+        {/* Floating Actions */}
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="mt-40 flex flex-col items-center"
+          transition={{ delay: 2, duration: 1.2 }}
+          className="absolute bottom-20 flex flex-col items-center z-40"
         >
-          <button className="group relative px-16 py-6 border border-white/10 bg-black text-white font-display font-medium uppercase tracking-[0.5em] text-[11px] overflow-hidden rounded-full hover:border-white/40 transition-all duration-700 active:scale-95">
-            <span className="relative z-10 flex items-center space-x-4">
-              <ShoppingCart size={14} className="opacity-60" />
+          <button className="group relative px-20 py-6 border border-white/20 bg-black/40 backdrop-blur-xl text-white font-display font-medium uppercase tracking-[0.6em] text-[12px] overflow-hidden rounded-full hover:border-white transition-all duration-700 shadow-2xl shadow-white/5 active:scale-95">
+            <span className="relative z-10 flex items-center space-x-6">
+              <ShoppingCart size={16} className="opacity-80" />
               <span>{config.ctaText}</span>
             </span>
-            <div className="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+            <div className="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
             <style jsx>{`
               button:hover span { color: black; }
               button:hover { color: black; }
             `}</style>
           </button>
           
-          <div className="mt-12 flex flex-col items-center opacity-30 animate-pulse">
-            <span className="text-[9px] uppercase tracking-[0.6em] mb-4 font-display">Elite Craftsmanship</span>
-            <ArrowDown size={14} />
+          <div className="mt-12 opacity-20 hover:opacity-100 transition-opacity cursor-pointer group flex flex-col items-center">
+             <span className="text-[10px] uppercase tracking-[0.5em] mb-4 font-display">Crafting Excellence</span>
+             <ArrowDown size={18} className="animate-bounce" />
           </div>
         </motion.div>
       </div>
 
-      {/* 🎞 Cinema Lighting Vignette */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_40%,transparent_0%,rgba(0,0,0,0.8)_100%)]" />
+      {/* 🎞 Cinema Vignette Layer */}
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_50%,transparent_20%,rgba(0,0,0,0.9)_100%)] z-10" />
     </section>
   );
 };
