@@ -1,0 +1,105 @@
+/* Inter and Playfair Display fonts are loaded via next/font in layout.tsx */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 33 20% 96%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 33 20% 96%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 33 20% 96%;
+
+    --primary: 33 40% 85%;
+    --primary-foreground: 222 47% 2%;
+
+    --secondary: 222 30% 10%;
+    --secondary-foreground: 33 20% 90%;
+
+    --muted: 222 30% 8%;
+    --muted-foreground: 222 10% 55%;
+
+    --accent: 33 40% 85%;
+    --accent-foreground: 222 47% 2%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 222 20% 15%;
+    --input: 222 20% 15%;
+    --ring: 33 40% 85%;
+
+    --radius: 0rem;
+
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 33 20% 96%;
+    --sidebar-primary: 33 40% 85%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 30% 12%;
+    --sidebar-accent-foreground: 33 20% 90%;
+    --sidebar-border: 222 20% 18%;
+    --sidebar-ring: 33 40% 85%;
+
+    --beige: 33 40% 85%;
+    --beige-light: 33 30% 95%;
+    --beige-dark: 33 40% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-playfair), serif;
+  }
+
+  .font-body {
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  .text-accent-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(33 40% 85%), hsl(33 30% 95%));
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/20 hover:bg-primary/40 transition-colors rounded-full;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-foreground;
+  }
+}
